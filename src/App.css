@@ -8,5 +8,8 @@
   width:100%
 }
 .paddingZero{
-  padding: 0;
+  padding: 0 !important;
+}
+.brokenWhite{
+  background:#f8f9fa;
 }

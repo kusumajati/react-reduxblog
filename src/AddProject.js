@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import {Form, FormGroup, Label, Input, Button, FormText} from 'reactstrap'
+import {Form, FormGroup, Label, Input, Button, Container} from 'reactstrap'
 
 export default class AddProjects extends React.Component {
     constructor(props){
@@ -66,7 +66,9 @@ export default class AddProjects extends React.Component {
             }
         return (
             <div>
-                <Form>
+                <Container >
+                    
+                <Form style={{width:'50%', margin:'1em auto'}}>
         <FormGroup>
           <Label for="exampleEmail">Project Name</Label>
           <Input onChange={this.onChangeTitle} type="email" name="email" />
@@ -80,9 +82,14 @@ export default class AddProjects extends React.Component {
           <Input onChange={this.onChangeDesc} type="textarea" name="select" >
           </Input>
         </FormGroup>
-        <Button onClick={this.AddNewProject}>Submit</Button>
+        <Link to='/projects'>
+        <Button onClick={this.AddNewProject}>Back</Button>
+        </Link>
+        <Button style={{float:'right'}} onClick={this.AddNewProject}>Submit</Button>
       </Form>
+      </Container>
             </div>
+            
         )
     }
 }

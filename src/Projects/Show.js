@@ -38,8 +38,8 @@ export default class Example extends React.Component {
         <Row>
           <Col sm='4'>
           <ListGroup>
-        <ListGroupItem className="justify-content-between"> <img className='imageProfile' src={this.state.project.categories} alt=""/> </ListGroupItem>
-        <ListGroupItem className="justify-content-between">{this.state.project.title} <Badge pill>2</Badge></ListGroupItem>
+        <ListGroupItem className="paddingZero justify-content-between"> <img className='imageProfile' src={this.state.project.categories} alt=""/> </ListGroupItem>
+        <ListGroupItem className="justify-content-between">{this.state.project.title} </ListGroupItem>
       </ListGroup>
           </Col>
            <Col sm='8'> 
@@ -49,25 +49,11 @@ export default class Example extends React.Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              Profile Details
+              Project Details
             </NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink
-              className={classnames({ active: this.state.activeTab === '2' })}
-              onClick={() => { this.toggle('2'); }}
-            >
-              Barang Jualan
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              className={classnames({ active: this.state.activeTab === '3' })}
-              onClick={() => { this.toggle('3'); }}
-            >
-             Daftar Transaksi
-            </NavLink>
-          </NavItem>
+
+
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">

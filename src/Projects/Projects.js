@@ -25,16 +25,18 @@ export default class Projects extends React.Component {
         return (
             <div style={{ textAlign: 'center' }}>
                 <Link to='/addproject'>
-                    <button>Add Project</button>
+                    <button style={{marginBottom:'1em'}}>Add Project</button>
+
                 </Link>
-                <ul>
+
+                <ul style={{listStyle:'none', padding:0}}>
                     {
                         this.state.projectArray.map(project=>{
                             return(
-                                <li>
+                                <li className={this.state.projectArray.indexOf(project) !== 0 &&this.state.projectArray.indexOf(project)%2===0?'brokenWhite':''} style={{ padding:'1em'}}>
                                     <Link to={`/projects/${project.id}`}>
                                     <img src={project.categories} alt=""/>
-                                    <p>{project.title}</p>
+                                    <p  style={{margin:0}}>{project.title}</p>
                                     </Link>
                                 </li>
                             )
