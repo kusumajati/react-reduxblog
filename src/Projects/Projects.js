@@ -33,7 +33,7 @@ export default class Projects extends React.Component {
                     {
                         this.state.projectArray.map(project=>{
                             return(
-                                <li className={this.state.projectArray.indexOf(project) !== 0 &&this.state.projectArray.indexOf(project)%2===0?'brokenWhite':''} style={{ padding:'1em'}}>
+                                <li className={this.state.projectArray.indexOf(project) === 0 || this.state.projectArray.indexOf(project)%2===0?'brokenWhite':''} style={{ padding:'1em'}}>
                                     <Link to={`/projects/${project.id}`}>
                                     <img src={project.categories} alt=""/>
                                     <p  style={{margin:0}}>{project.title}</p>
